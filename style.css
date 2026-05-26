@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #2DCE9A;
+  --green-dark: #1aab7d;
+  --green-light: #e8faf4;
+  --text: #111;
+  --muted: #666;
+  --border: #ebebeb;
+  --bg: #fff;
+  --bg2: #fafafa;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%; height: 64px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px); z-index: 100;
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--text); }
+.btn-nav { background: var(--green) !important; color: #fff !important; padding: 8px 18px; border-radius: 20px; font-weight: 600 !important; font-size: 14px !important; }
+.btn-nav:hover { background: var(--green-dark) !important; }
+
+footer {
+  padding: 28px 6%; display: flex; justify-content: space-between;
+  align-items: center; border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--muted); flex-wrap: wrap; gap: 16px;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 20px; }
+
+.btn-primary { display: inline-block; background: var(--green); color: #fff; padding: 14px 28px; border-radius: 30px; font-weight: 700; font-size: 15px; text-decoration: none; border: none; cursor: pointer; transition: background 0.15s; font-family: inherit; }
+.btn-primary:hover { background: var(--green-dark); }
+.btn-secondary { display: inline-block; background: #fff; color: var(--text); padding: 14px 28px; border-radius: 30px; font-weight: 500; font-size: 15px; border: 1px solid #ddd; cursor: pointer; transition: border-color 0.15s; font-family: inherit; text-decoration: none; }
+.btn-secondary:hover { border-color: #aaa; }
