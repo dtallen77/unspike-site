@@ -7,26 +7,26 @@
   <meta name="description" content="Get help with Unspike. Contact our team or browse frequently asked questions." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .support-hero { text-align: center; padding: 80px 6% 56px; }
-    .support-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -1.2px; margin-bottom: 12px; }
+    .support-hero { text-align: center; padding: 72px 6% 48px; }
+    .support-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -1.5px; margin-bottom: 12px; }
     .support-hero p { font-size: 17px; color: var(--muted); }
 
-    .support-body { max-width: 660px; margin: 0 auto; padding: 0 6% 100px; }
+    .support-body { max-width: 680px; margin: 0 auto; padding: 0 6% 100px; }
 
     .contact-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 20px; padding: 36px 32px; margin-bottom: 56px;
+      background: var(--bg2); border-radius: 20px;
+      padding: 36px 32px; margin-bottom: 64px;
     }
-    .contact-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-    .contact-card > p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+    .contact-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .contact-card > p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
 
-    .form-group { margin-bottom: 18px; }
+    .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .form-group input,
     .form-group textarea,
     .form-group select {
-      width: 100%; border: 1px solid #e0e0e0; border-radius: 10px;
+      width: 100%; border: 1px solid var(--border); border-radius: 10px;
       padding: 11px 14px; font-size: 14px; font-family: inherit;
       outline: none; transition: border-color 0.15s; color: var(--text);
       background: #fff; appearance: none; -webkit-appearance: none;
@@ -34,7 +34,7 @@
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,206,154,0.12); }
-    .form-group textarea { height: 128px; resize: vertical; line-height: 1.5; }
+    .form-group textarea { height: 120px; resize: vertical; line-height: 1.5; }
     .select-wrap { position: relative; }
     .select-wrap::after {
       content: ''; position: absolute; right: 14px; top: 50%;
@@ -45,7 +45,7 @@
     .submit-btn {
       width: 100%; background: var(--green); color: #fff; border: none;
       border-radius: 30px; padding: 14px; font-size: 15px; font-weight: 700;
-      cursor: pointer; margin-top: 6px; transition: background 0.15s; font-family: inherit;
+      cursor: pointer; margin-top: 8px; transition: background 0.15s; font-family: inherit;
     }
     .submit-btn:hover { background: var(--green-dark); }
     .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -65,16 +65,22 @@
       margin-top: 12px; display: none;
     }
 
-    /* FAQ */
-    .faq h2 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
-    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-    .faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    /* FAQ — matches homepage accordion style */
+    .faq { margin-top: 16px; }
+    .faq h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 32px; }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-item summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 18px 0; font-size: 15px; font-weight: 600; cursor: pointer; gap: 20px; user-select: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 300; color: var(--muted); flex-shrink: 0; line-height: 1; transition: transform 0.2s; display: inline-block; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.75; padding-bottom: 18px; }
+    .faq-item a { color: var(--green-dark); text-decoration: none; }
+    .faq-item a:hover { text-decoration: underline; }
 
     @media (max-width: 520px) {
       .form-row { grid-template-columns: 1fr; }
-      .contact-card { padding: 28px 20px; }
+      .contact-card { padding: 24px 20px; }
     }
   </style>
 
@@ -167,30 +173,40 @@
     <div class="faq">
       <h2>Frequently asked questions</h2>
 
-      <div class="faq-item">
-        <div class="faq-q">How does Unspike estimate blood sugar spikes?</div>
-        <div class="faq-a">Unspike uses nutritional data — carbohydrates, fiber, glycemic index, and more — combined with our algorithm to estimate the typical blood sugar spike for one serving of a food. It's an average-user estimate based on one serving, not a personal or medical measurement.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is Unspike a medical device?</div>
-        <div class="faq-a">No. Unspike is a wellness app designed to help you make informed food choices. It is not a medical device and should not be used to diagnose or treat any medical condition. Always consult your doctor for medical advice.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is the app free?</div>
-        <div class="faq-a">Yes — Unspike is free to download and use. We may offer optional premium features in the future.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What foods can I scan?</div>
-        <div class="faq-a">You can scan any packaged food with a barcode. We support millions of products across grocery stores and restaurants, and are constantly expanding our database.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Does it work without a CGM or wearable?</div>
-        <div class="faq-a">Yes — no continuous glucose monitor or any wearable is required. Unspike works entirely from nutritional food data and your phone's camera.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is my data private?</div>
-        <div class="faq-a">Absolutely. We never sell your personal data. Spike estimates are calculated locally on your device. Read our full <a href="/privacy" style="color:var(--green-dark);">Privacy Policy</a> for details.</div>
-      </div>
+      <details class="faq-item">
+        <summary>How does Unspike estimate blood sugar spikes?</summary>
+        <p>Unspike uses nutritional data — carbohydrates, fiber, glycemic index, and more — to estimate the typical blood sugar spike for one serving of a food. It's an average-user estimate, not a personal or medical measurement.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How accurate are the estimates?</summary>
+        <p>Estimates are directional, not precise. They're based on an average user response to one standard serving — your actual spike can vary significantly depending on your metabolism, portion size, what else you ate, and other factors. Use Unspike to compare foods and make better choices, not as a clinical measurement.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does it work without a CGM or wearable?</summary>
+        <p>Yes — no continuous glucose monitor or any wearable is required. Unspike works entirely from nutritional food data and your phone's camera.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What foods can I scan?</summary>
+        <p>Any packaged food with a barcode. We support millions of products across grocery stores and are constantly expanding our database.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is Unspike a medical device?</summary>
+        <p>No. Unspike is a wellness app designed to help you make informed food choices. It is not a medical device and should not be used to diagnose or treat any medical condition. Always consult your doctor for medical advice.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is the app free?</summary>
+        <p>Yes — Unspike is free to download and use.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is my data private?</summary>
+        <p>Absolutely. We never sell your personal data. Spike estimates are calculated locally on your device. Read our full <a href="/privacy">Privacy Policy</a> for details.</p>
+      </details>
     </div>
   </div>
 </main>
