@@ -91,17 +91,46 @@ footer a:hover { color: var(--text); }
 .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
 .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-/* CTA */
-.cta { background: #0e0e0e; color: #fff; padding: 100px 6%; margin-top: 80px; display: flex; align-items: center; justify-content: center; gap: 80px; flex-wrap: wrap; }
-.cta-text { max-width: 440px; }
-.cta-text h2 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -1px; margin-bottom: 14px; }
-.cta-text p { font-size: 16px; color: #999; margin-bottom: 36px; }
-.store-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.store-btn { background: #1a1a1a; color: #fff; border: 1px solid #2e2e2e; padding: 13px 22px; border-radius: 14px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s; font-family: inherit; text-decoration: none; }
-.store-btn:hover { background: #242424; }
-.store-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-.store-note { font-size: 12px; color: #555; margin-top: 14px; }
-.cta-icon img { width: 140px; border-radius: 32px; box-shadow: 0 32px 64px rgba(0,0,0,0.5); }
+/* Why it matters */
+.why-matters { padding: 80px 6%; background: var(--bg2); }
+.why-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.why-headline { font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
+.why-sub { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto 40px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; text-align: left; }
+.why-card { display: flex; align-items: center; gap: 16px; padding: 24px 22px; background: #fff; border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); min-height: 90px; }
+.why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.why-card p { font-size: 13px; color: var(--muted); }
+.why-arrow-icon { font-size: 20px; font-weight: 800; flex-shrink: 0; width: 24px; text-align: center; }
+.why-arrow-icon.up { color: var(--green-dark); }
+.why-arrow-icon.down { color: #d63031; }
+.why-disclaimer { font-size: 11.5px; color: #bbb; line-height: 1.6; }
+@media (max-width: 600px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* FAQ Home */
+.faq-home { padding: 80px 6% 80px; }
+.faq-home-inner { max-width: 680px; margin: 0 auto; }
+.faq-home-list { margin-top: 40px; }
+.faq-home-item { border-top: 1px solid var(--border); }
+.faq-home-item:last-of-type { border-bottom: 1px solid var(--border); }
+.faq-home-item summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 15px; font-weight: 600; cursor: pointer; gap: 20px; user-select: none; }
+.faq-home-item summary::-webkit-details-marker { display: none; }
+.faq-home-item summary::after { content: '+'; font-size: 22px; font-weight: 300; color: var(--muted); flex-shrink: 0; line-height: 1; transition: transform 0.2s; display: inline-block; }
+.faq-home-item[open] summary::after { transform: rotate(45deg); }
+.faq-home-a { font-size: 14px; color: var(--muted); line-height: 1.75; padding-bottom: 20px; }
+.faq-home-a a { color: var(--green-dark); text-decoration: none; }
+.faq-home-a a:hover { text-decoration: underline; }
+.faq-more { font-size: 14px; color: var(--muted); margin-top: 28px; }
+.faq-more a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
+.faq-more a:hover { text-decoration: underline; }
+
+/* Bottom CTA */
+.bottom-cta { text-align: center; padding: 96px 6% 112px; background: var(--bg2); }
+.bottom-cta-inner { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0; }
+.cta-icon { width: 88px; height: 88px; border-radius: 22%; box-shadow: 0 16px 48px rgba(0,0,0,0.14); margin-bottom: 28px; }
+.bottom-cta h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
+.bottom-cta > .bottom-cta-inner > p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+.bottom-cta .appstore-btn { margin: 0 auto; }
+.cta-note { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
 
 /* Logo sizing */
 .nav-logo-img { height: 28px; width: auto; }
