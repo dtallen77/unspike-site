@@ -13,13 +13,14 @@
   --bg2: #fafafa;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 nav {
@@ -29,13 +30,18 @@ nav {
   position: sticky; top: 0; background: rgba(255,255,255,0.95);
   backdrop-filter: blur(8px); z-index: 100;
 }
-.nav-logo { display: flex; align-items: center; text-decoration: none; color: var(--text); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; color: var(--text); flex-shrink: 0; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.15s; font-weight: 500; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.active { color: var(--text); }
 .btn-nav { background: var(--green) !important; color: #fff !important; padding: 8px 18px; border-radius: 20px; font-weight: 600 !important; font-size: 14px !important; }
 .btn-nav:hover { background: var(--green-dark) !important; }
+
+@media (max-width: 540px) {
+  .nav-links a:not(.btn-nav) { display: none; }
+  .btn-nav { padding: 8px 14px; font-size: 13px !important; }
+}
 
 footer {
   padding: 28px 6%; display: flex; justify-content: space-between;
@@ -51,17 +57,28 @@ footer a:hover { color: var(--text); }
 .btn-secondary { display: inline-block; background: #fff; color: var(--text); padding: 14px 28px; border-radius: 30px; font-weight: 500; font-size: 15px; border: 1px solid #ddd; cursor: pointer; transition: border-color 0.15s; font-family: inherit; text-decoration: none; }
 .btn-secondary:hover { border-color: #aaa; }
 
+/* App Store badge */
+.appstore-btn { display: inline-flex; align-items: center; gap: 10px; background: #000; color: #fff; padding: 12px 20px; border-radius: 10px; text-decoration: none; transition: background 0.15s; width: auto; max-width: 220px; align-self: center; }
+.appstore-btn:hover { background: #1a1a1a; }
+.appstore-apple-logo { width: 26px; height: 26px; fill: #fff; flex-shrink: 0; }
+.appstore-text { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+.appstore-sub { font-size: 10.5px; font-weight: 400; opacity: 0.85; letter-spacing: 0.4px; }
+.appstore-main { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; }
+.hero-store-note { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+.hero-learn-more { font-size: 14px; color: var(--muted); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: color 0.15s; margin-top: 8px; }
+.hero-learn-more:hover { color: var(--text); }
+
 /* Hero */
-.hero { text-align: center; padding: 90px 6% 70px; max-width: 800px; margin: 0 auto; }
+.hero { text-align: center; padding: 72px 6% 48px; max-width: 800px; margin: 0 auto; }
 .hero-badge { display: inline-block; background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 28px; }
 .hero h1 { font-size: clamp(40px, 7vw, 66px); font-weight: 700; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
 .hero h1 span { color: var(--green); }
 .hero p { font-size: 18px; color: var(--muted); line-height: 1.65; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
-.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
+.hero-btns { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: 0; }
 .hero-screenshot { display: flex; justify-content: center; }
 .hero-screenshot img { width: 280px; max-width: 80vw; filter: drop-shadow(0 40px 80px rgba(0,0,0,0.18)); }
-.hero-icon { display: flex; justify-content: center; margin-bottom: 36px; }
-.hero-icon img { width: 110px; height: 110px; border-radius: 24%; box-shadow: 0 16px 48px rgba(0,0,0,0.20); }
+.hero-icon { display: flex; justify-content: center; margin-bottom: 32px; }
+.hero-icon img { width: 120px; height: 120px; border-radius: 24%; box-shadow: 0 20px 56px rgba(0,0,0,0.18); }
 
 /* Features */
 .features { padding: 100px 6%; max-width: 1080px; margin: 0 auto; }
@@ -89,3 +106,33 @@ footer a:hover { color: var(--text); }
 /* Logo sizing */
 .nav-logo-img { height: 28px; width: auto; }
 .footer-logo-img { height: 22px; width: auto; }
+
+/* How it works */
+#how-it-works { padding: 80px 6% 100px; background: var(--bg2); }
+.hiw-inner { max-width: 1060px; margin: 0 auto; text-align: center; }
+.hiw-steps { display: flex; align-items: flex-start; justify-content: center; gap: 48px; margin-top: 64px; }
+.hiw-step { flex: 1; max-width: 300px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.hiw-number { width: 32px; height: 32px; border-radius: 50%; background: var(--green); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.hiw-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; margin-top: 28px; }
+.hiw-step p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* iPhone frame */
+.hiw-phone {
+  position: relative;
+  width: 240px;
+  background: #111;
+  border-radius: 26px;
+  padding: 6px;
+  box-shadow: 0 24px 56px rgba(0,0,0,0.22), 0 6px 16px rgba(0,0,0,0.12);
+}
+.hiw-phone-screen {
+  width: 100%;
+  display: block;
+  border-radius: 19px;
+  overflow: hidden;
+}
+
+@media (max-width: 780px) {
+  .hiw-steps { flex-direction: column; align-items: center; gap: 48px; }
+  .hiw-step { max-width: 100%; }
+}
