@@ -171,5 +171,12 @@
   </div>
 </footer>
 
+<script>
+  if (new URLSearchParams(window.location.search).get('mobile') === 'true') {
+    document.querySelector('nav').style.display = 'none';
+    document.querySelector('footer').style.display = 'none';
+    document.querySelector('.privacy-wrap').style.paddingTop = '24px';
+  }
+</script>
 </body>
 </html>
